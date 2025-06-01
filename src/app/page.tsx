@@ -96,12 +96,12 @@ const page = () => {
       <div className='flex flex-col w-full max-w-3xl justify-center items-center gap-4'>
         <div>
           <motion.span
-            className={`name text-6xl font-bold inline-block mr-4 opacity-0`}
+            className={`name text-4xl font-bold inline-block mr-4 opacity-0`}
           >
             Sharan{" "}
           </motion.span>
           <motion.span
-            className={`name text-6xl font-bold inline-block`}
+            className={`name text-4xl font-bold inline-block`}
             initial={{ opacity: 0 }}
           >
             Suri
@@ -110,7 +110,7 @@ const page = () => {
         <p
           suppressHydrationWarning
           className={cn(
-            "text-sm text-center whitespace-pre-line flex flex-row gap-1 flex-wrap w-sm justify-center",
+            "text-sm text-center whitespace-pre-line flex flex-row gap-1 flex-wrap w-sm justify-center px-4 md:px-0",
             theme === "light" ? "font-medium" : "font-thin"
           )}
         >
