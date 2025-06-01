@@ -18,21 +18,26 @@ const page = () => {
   }, [theme]);
 
   useEffect(() => {
-    if (sessionStorage.getItem("isLoaded") === "true" || isLoaded) {
-      setIsLoaded(true);
-    }
-    const animations = async () => {
+    const animations = async (duration: number) => {
       if (!isLoaded) {
         try {
-          await animate(".loader", { opacity: 1 }, { duration: 0.4 });
-          await animate(".loader", { opacity: 0 }, { duration: 0.5, delay: 2 });
+          await animate(
+            ".loader",
+            { opacity: 1 },
+            { duration: duration * 0.4 }
+          );
+          await animate(
+            ".loader",
+            { opacity: 0 },
+            { duration: duration * 0.5, delay: duration * 2 }
+          );
         } catch {}
       }
       await animate(
         ".name",
         { opacity: 1, y: 0 },
         {
-          duration: 0.8,
+          duration: duration * 0.8,
           ease: "easeIn",
         }
       );
@@ -40,23 +45,40 @@ const page = () => {
         ".description",
         { opacity: 1, y: 0, filter: "blur(0px)" },
         {
-          duration: 0.1,
+          duration: duration * 0.1,
           type: "spring",
           stiffness: 50,
-          delay: stagger(0.05),
+          delay: stagger(duration * 0.05),
         }
       );
       await animate(
         ".wv",
         { opacity: 1, filter: "blur(0px)" },
-        { duration: 0.5 }
+        { duration: duration * 0.5 }
       );
-      await animate(".resumebutton", { opacity: 1 }, { duration: 0.5 });
-      animate(".navbar", { y: 0 }, { duration: 0.4, ease: "easeIn" });
-      await animate(".navbar", { filter: "blur(0px)" }, { duration: 0.5 });
+      await animate(
+        ".resumebutton",
+        { opacity: 1 },
+        { duration: duration * 0.5 }
+      );
+      animate(
+        ".navbar",
+        { y: 0 },
+        { duration: duration * 0.4, ease: "easeIn" }
+      );
+      await animate(
+        ".navbar",
+        { filter: "blur(0px)" },
+        { duration: duration * 0.5 }
+      );
       sessionStorage.setItem("isLoaded", "true");
     };
-    animations();
+    if (sessionStorage.getItem("isLoaded") === "true" || isLoaded) {
+      setIsLoaded(true);
+      animations(0);
+      return;
+    }
+    animations(1);
   }, []);
 
   const description =
@@ -73,8 +95,7 @@ const page = () => {
       <div className='flex flex-col w-full max-w-3xl justify-center items-center gap-4'>
         <div>
           <motion.span
-            className={`name text-6xl font-bold inline-block mr-4`}
-            initial={{ opacity: 0 }}
+            className={`name text-6xl font-bold inline-block mr-4 opacity-0`}
           >
             Sharan{" "}
           </motion.span>
