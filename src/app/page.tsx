@@ -7,6 +7,7 @@ import Loader from "@/components/loader";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 const page = () => {
   const { theme } = useTheme();
@@ -133,7 +134,7 @@ const page = () => {
             className='inline-block mr-1 relative cursor-pointer group'
             whileHover='hover'
           >
-            Fullstack{" "}
+            <Link href='/projects'>Fullstack </Link>
             <motion.span
               className='absolute bottom-0 left-0 w-0 h-[1px] bg-primary'
               variants={{
@@ -150,7 +151,7 @@ const page = () => {
             className='inline-block relative cursor-pointer group'
             whileHover='hover'
           >
-            {"WebVeda"}
+            <Link href='/work'>{"WebVeda"}</Link>
             <motion.span
               className='absolute bottom-0 left-0 w-0 h-[1px] bg-primary'
               variants={{

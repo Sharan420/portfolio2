@@ -33,8 +33,8 @@ const page = () => {
   return (
     <>
       <Navbar />
-      <div className='flex flex-col items-center justify-center min-h-screen'>
-        <div className='flex flex-col items-start justify-start w-3xl min-h-screen pt-24'>
+      <div className='flex flex-col items-center justify-center min-h-screen px-8 pb-8 md:pb-0'>
+        <div className='flex flex-col items-start justify-start w-full md:w-3xl min-h-screen pt-24'>
           <h1 className='text-4xl font-bold underline decoration-2 underline-offset-8 mb-6'>
             Projects
           </h1>

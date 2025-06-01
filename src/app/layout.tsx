@@ -21,17 +21,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en' suppressHydrationWarning>
-      <body className={`${inter.className} antialiased`}>
+      <head>
+        <link rel='icon' href='/favicon.ico' sizes='any' />
+      </head>
+      <body className={`${inter.className} antialiased w-screen md:w-full`}>
         <ThemeProvider
           attribute='class'
           defaultTheme='system'
           enableSystem
           disableTransitionOnChange
         >
-          {children}
-          <div className='fixed bottom-4 right-4'>
+          <div className='fixed bottom-4 right-4 z-20'>
             <ThemeBtn />
           </div>
+          {children}
         </ThemeProvider>
       </body>
     </html>

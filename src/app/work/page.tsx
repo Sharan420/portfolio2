@@ -33,8 +33,8 @@ const work = () => {
   return (
     <>
       <Navbar />
-      <div className='flex flex-col items-center justify-center min-h-screen'>
-        <div className='flex flex-col items-start justify-start w-3xl min-h-screen pt-24'>
+      <div className='flex flex-col items-center justify-center min-h-screen h-full px-8 md:px-0 pb-8 md:pb-0'>
+        <div className='flex flex-col items-start justify-start w-full md:w-3xl min-h-screen pt-24'>
           <h1 className='text-4xl font-bold underline decoration-2 underline-offset-8 mb-8'>
             Work
           </h1>
@@ -49,7 +49,7 @@ const work = () => {
               <p className='text-sm text-gray-500 mb-4'>{work.subTitle}</p>
               <ul className='flex flex-col list-disc list-inside gap-2'>
                 {work.description.map((description, index) => (
-                  <li className='text-sm' key={index}>
+                  <li className='text-sm z-1' key={index}>
                     {description}
                   </li>
                 ))}
