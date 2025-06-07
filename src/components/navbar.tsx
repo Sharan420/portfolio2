@@ -9,7 +9,7 @@ const Navbar = ({ isHome = false }: { isHome?: boolean }) => {
   const [modal, setModal] = useState(false);
   return (
     <>
-      <div className='fixed top-0 left-0 w-full flex justify-center items-center p-2 md:p-3'>
+      <div className='z-30 bg-background fixed top-0 left-0 w-full flex justify-center items-center p-2 md:p-3'>
         <motion.div
           className='navbar w-full md:w-1/3 flex justify-between items-center border-2 border-border p-2 px-4 md:p-2 md:px-8 rounded-lg bg-card'
           initial={{

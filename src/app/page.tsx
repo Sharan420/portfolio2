@@ -101,7 +101,7 @@ const page = () => {
             Sharan{" "}
           </motion.span>
           <motion.span
-            className={`name text-4xl md:text-6xl font-bold inline-block`}
+            className={`name text-4xl md:text-6xl  font-bold inline-block`}
             initial={{ opacity: 0 }}
           >
             Suri
